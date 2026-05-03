@@ -4,6 +4,8 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY template/ /usr/share/nginx/html/
 
+COPY css/ /use/share/nginx/html/
+
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
