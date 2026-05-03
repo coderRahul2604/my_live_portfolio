@@ -4,7 +4,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY template/ /usr/share/nginx/html/
 
-COPY css/ /usr/share/nginx/html/
+COPY css/ /usr/share/nginx/html/css/
 
 EXPOSE 80
 
