@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rahul Thorat — Cloud, DevOps & Full Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<!-- ═══════════════ NAVIGATION ═══════════════ -->
+
 <div class="nav-wrapper">
   <nav>
     <div class="nav-logo">Rahul Thorat</div>
@@ -26,7 +26,7 @@
   </nav>
 </div>
 
-<!-- ═══════════════ HERO ═══════════════ -->
+
 <div id="home" class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">DCO Engineer · Developer · DevOps and Cloud Aspirant</p>
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<!-- ═══════════════ ABOUT ═══════════════ -->
+
 <div id="about" class="about-strip">
   <div class="about-inner">
     <div class="about-portrait reveal">
@@ -68,7 +68,7 @@
   </div>
 </div>
 
-<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+
 <section id="experience">
   <p class="section-label reveal">Work History</p>
   <h2 class="section-title reveal">Professional Experience</h2>
@@ -94,7 +94,7 @@
 
 <hr class="section-sep"/>
 
-<!-- ═══════════════ SKILLS ═══════════════ -->
+
 <section id="skills">
   <p class="section-label reveal">Expertise</p>
   <h2 class="section-title reveal">Technical Skills</h2>
@@ -175,7 +175,7 @@
 
 <hr class="section-sep"/>
 
-<!-- ═══════════════ PROJECTS ═══════════════ -->
+
 <div id="projects" class="projects-bg">
   <div class="projects-inner">
     <p class="section-label reveal">Portfolio</p>
@@ -274,7 +274,7 @@
   </div>
 </div>
 
-<!-- ═══════════════ EDUCATION ═══════════════ -->
+
 <section id="education">
   <p class="section-label reveal">Academic History</p>
   <h2 class="section-title reveal">Education</h2>
@@ -318,7 +318,7 @@
 
 <hr class="section-sep"/>
 
-<!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+
 <section id="certifications">
   <p class="section-label reveal">Credentials</p>
   <h2 class="section-title reveal">Certifications &amp; Achievements</h2>
@@ -345,7 +345,7 @@
 
 <hr class="section-sep"/>
 
-<!-- ═══════════════ CONTACT ═══════════════ -->
+
 <section id="contact">
   <p class="section-label reveal">Get In Touch</p>
   <h2 class="section-title reveal">Contact Me</h2>
@@ -400,20 +400,20 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Write your message here…"></textarea>
       </div>
-      <button class="btn-submit" type="button">Send Message</button>
+      <button class="btn-submit" onclick="sendMail() type="button">Send Message</button>
     </div>
 
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
+
 <footer>
   <div class="footer-ornament">✦</div>
   <p class="footer-name">Rahul Thorat</p>
   <p class="footer-copy">&copy; 2026 · DCO Engineer · Developer · DevOps Aspirant · Satara, Maharashtra</p>
 </footer>
 
-<!-- ═══════════════ SCROLL REVEAL ═══════════════ -->
+
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -425,6 +425,29 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  <button class="btn-submit" type="button" onclick="sendMail()">Send Message</button>
+
+function sendMail() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const reason = document.getElementById("reason").value;
+  const message = document.getElementById("message").value;
+
+  const subject = `New Contact Form Submission: ${reason}`;
+  const body = `
+Name: ${name}
+Email: ${email}
+Reason: ${reason}
+
+Message:
+${message}
+  `;
+
+  window.location.href =
+    `mailto:thoratrahul2604@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 </script>
 
 </body>
